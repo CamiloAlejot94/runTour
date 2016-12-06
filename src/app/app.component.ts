@@ -31,7 +31,7 @@ export class MyApp {
       Splashscreen.hide();
       this.loadScript('https://www.gstatic.com/firebasejs/3.6.2/firebase.js', () => {
         firebase.initializeApp(environment.config);
-        this.rootPage = LoginPage
+        this.userState()
       })
     });
   }
@@ -42,7 +42,7 @@ export class MyApp {
   //-----------------------------------------------------------------
 
   /**
-   * Carga dinamicamente una libreria JS y llama un callback cuando halla temrinado
+   * Carga dinamicamente una libreria JS y llama un callback cuando haya temrinado
    * @param {any} filename URL de la libreria que se va ha cargar
    * @param {any} callback metodo que se llama despues de la carga
    * @memberOf MyApp
@@ -55,5 +55,20 @@ export class MyApp {
     if (typeof fileref != "undefined") {
       document.getElementsByTagName("head")[0].appendChild(fileref)
     }
+  }
+
+  /**
+   * method than check if the user is login or logout
+   * @memberOf MyApp
+   */
+  userState(){
+    firebase.auth().onAuthStateChanged(user=>{
+      if(user){
+        this.rootPage = HomePage
+      }
+      else{
+        this.rootPage = LoginPage
+      }
+    })
   }
 }

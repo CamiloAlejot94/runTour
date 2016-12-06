@@ -1,9 +1,9 @@
 export const environment = {
 	config : {
-    apiKey: "AIzaSyA_TopHOY_rkNrFXS1DH3awfR14vmBiXYM",
-    authDomain: "runtour-11f91.firebaseapp.com",
-    databaseURL: "https://runtour-11f91.firebaseio.com",
-    storageBucket: "runtour-11f91.appspot.com",
-    messagingSenderId: "165845604330"
+    apiKey: "AIzaSyAwupUrffemJXfEYTQbAbj9XQiWEye1HCo",
+    authDomain: "runtour-dev.firebaseapp.com",
+    databaseURL: "https://runtour-dev.firebaseio.com",
+    storageBucket: "runtour-dev.appspot.com",
+    messagingSenderId: "70040943693"
   }
 };

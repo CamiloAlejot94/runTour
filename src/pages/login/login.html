@@ -14,52 +14,44 @@
 </div>
 
 
-<ion-content padding class="login">
-  <img src="assets/img/logoRun.svg" alt="" />
-  <div class="flex-container" style="flex-direction: column;">
-    <div class="flex-10 info-login">
-      <input type="email" name="name" value="" placeholder="email" [(ngModel)]="user">
-    </div>
-    <div class="flex-10 info-login">
-      <input type="password" name="name" value="" placeholder="password" [(ngModel)]="pass">
-    </div>
-    <div class="flex-10 info-login">
-      <button type="button" name="SIGN IN" (click)="sign()">SIGN IN</button>
-    </div>
-    <div class="flex-10 info-login">
-      <p>
-        Forgot your password?
-      </p>
-    </div>
-    <div class="flex-container or-clase" style="justify-content:space-around">
-      <div class="flex-3">
-        <hr class="lineaPunteada">
-      </div>
-      <div class="flex-3">
-        or
-      </div>
-      <div class="flex-3">
-        <hr class="lineaPunteada">
-      </div>
-    </div>
-    <div class="flex-10">
-      <button type="button" class="fb" (click)="fb"><span class="icon-facebook sp-fb"></span>Sign in with Facebook</button>
-    </div>
-    <div class="flex-container or-clase" style="justify-content:space-around">
-      <div class="flex-2">
-        <hr class="lineaPunteada">
-      </div>
-      <div class="flex-6">
-        Not registered yet?
-      </div>
-      <div class="flex-2">
-        <hr class="lineaPunteada">
-      </div>
-    </div>
-    <div class="flex-10 info-login">
-      <button type="button" name="SIGN IN" class="reg" [navPush]="pageRegistrar">REGISTER</button>
-    </div>
-  </div>
+<ion-content>
+<!--
+  TITULO PRINCIPAL (LOGO)
+-->
+<img src="assets/img/logoRun.svg" alt="" class="logoTitle">
+
+<div class="formLogin">
+  
+  <input type="text" placeholder="username" [(ngModel)]="email">
+  <input type="password" placeholder="password" [(ngModel)]="password">
+
+  <button class="whiteButton" (click)="signInEmail()">sign in</button>
+
+  <p class="txtWhite">Forgot your password?</p>
+  
+</div>
+
+<div class="separator">
+  <hr class="dotted-max">
+  <p class="txtWhite">or</p>
+  <hr class="dotted-max">
+</div>
+
+<!--
+  INGRESAR CON FACEBOOK
+-->
+<button class="fbButton" (click)="signInFacebook()">
+  <ion-icon ios="logo-facebook" md="logo-facebook"></ion-icon>
+  Sign in with facebook
+</button>
+
+<div class="separator">
+  <hr class="dotted">
+  <p class="txtWhite">Not registered yet?</p>
+  <hr class="dotted">
+</div>
+
+<button class="whiteButton" [navPush]="pageRegistrar">register</button>
 
 
 </ion-content>

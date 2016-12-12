@@ -46,6 +46,7 @@ export class LoginPage {
 	 * @memberOf LoginPage
 	 */
 	signInEmail() {
+		// TODO: Verificar data binding de email y pass 
 		if (this.email == null || this) {
 			let alert = this.alertCtrl.create({
 				title: 'Error',

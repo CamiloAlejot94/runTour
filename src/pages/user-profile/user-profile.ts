@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
 import { UserBack } from '../../providers/user-back';
+import { HomePage } from '../home/home';
 declare var firebase
 
 
@@ -12,6 +13,7 @@ export class UserProfile {
   //-----------------------------------------------------------------
   // Atributos
   //-----------------------------------------------------------------
+  pageHome: any
   name: string = "adam sandler" //Nombre del usuario
   genre = "Genre" //genero del usuario 
   Weight: any //peso del usuario
@@ -23,7 +25,9 @@ export class UserProfile {
   //-----------------------------------------------------------------
   // Constructor
   //-----------------------------------------------------------------
-  constructor(public navCtrl: NavController, public alertCtrl: AlertController, public provider: UserBack) { }
+  constructor(public navCtrl: NavController, public alertCtrl: AlertController, public provider: UserBack) {
+    this.pageHome=HomePage
+   }
 
   //-----------------------------------------------------------------
   // Metodos
@@ -94,7 +98,7 @@ export class UserProfile {
 
     alert.addInput({
       type: 'radio',
-      label: 'Centieters',
+      label: 'Centimeters',
       value: 'cm',
       checked: true
     });
@@ -138,7 +142,8 @@ export class UserProfile {
         uAltura: this.uHeigth,
         FechaNac: this.Bday,
       })
-    }
+     this.navCtrl.setRoot(HomePage)
+  }
   }
 }
 

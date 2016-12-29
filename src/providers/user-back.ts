@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-import 'rxjs/add/operator/map';
-import { Subject }    from 'rxjs/Subject';
+
+
 /*
   Generated class for the UserBack provider.
 

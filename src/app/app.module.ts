@@ -6,7 +6,7 @@ import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
 import { UserProfile } from '../pages/user-profile/user-profile';
 import { UserBack } from '../providers/user-back';
-
+import {DetalleService} from '../providers/detalle-service'
 
 
 
@@ -29,6 +29,6 @@ import { UserBack } from '../providers/user-back';
     RegisterPage,
     UserProfile,
   ],
-  providers: [{ provide: ErrorHandler, useClass: IonicErrorHandler},UserBack]
+  providers: [{ provide: ErrorHandler, useClass: IonicErrorHandler},UserBack,DetalleService]
 })
 export class AppModule { }

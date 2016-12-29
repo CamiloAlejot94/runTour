@@ -45,7 +45,7 @@ export class LoginPage {
 	 */
 	signInEmail() {
 		// TODO: Verificar data binding de email y pass 
-		if (this.email == null || this) {
+		if (this.email == null || this.password==null) {
 			let alert = this.alertCtrl.create({
 				title: 'Error',
 				subTitle: 'User and password is necessary',

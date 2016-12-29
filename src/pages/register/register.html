@@ -1,4 +1,3 @@
-
 <ion-header>
 
 </ion-header>
@@ -13,47 +12,45 @@
 
   <img src="assets/img/logoRun.svg" alt="" class="logoTitle">
 
-<div class="formLogin">
-  
-  <input type="Name" placeholder="Name" [(ngModel)]="name">
-  <input type="email" placeholder="email" [(ngModel)]="email">
-  <input type="Username" placeholder="username" [(ngModel)]="username">
-  <input type="Password" placeholder="Password" [(ngModel)]="password">
+  <div class="formLogin">
 
-  <button class="whiteButton" (click)="RegisterEmail()">Register</button>
+    <input type="Name" placeholder="Name" [(ngModel)]="name">
+    <input type="email" placeholder="email" [(ngModel)]="email">
+    <input type="Password" placeholder="Password" [(ngModel)]="password">
 
-</div>
+    <button class="whiteButton" (click)="RegisterEmail()">Register</button>
 
-<div class="separator" style="margin-top: -1vh">
-  <hr class="dotted-max">
-  <p class="txtWhite">or</p>
-  <hr class="dotted-max">
+  </div>
+<div style="bottom: 27vh;position: absolute;width: 100%;">
+  <div class="separator" style="margin-top: -1vh">
+<hr class="dotted-max">
+<p class="txtWhite">or</p>
+<hr class="dotted-max">
 </div>
 
 <button class="fbButton" (click)="signInFacebook()" style="margin-top: -2vh">
-  <ion-icon ios="logo-facebook" md="logo-facebook"></ion-icon>
-  Sign in with facebook
+<ion-icon ios="logo-facebook" md="logo-facebook"></ion-icon>
+Sign in with facebook
 </button>
-
-<div class="separator" style="margin-top: 0vh">
-  <ion-grid>    
-    <ion-row>
-      <ion-col width-10>
-        <hr class="dotted2">
-      </ion-col>
-      <ion-col width-80>
-        <p class="txtWhite" style="margin:0">Already registered?</p>
-      </ion-col>
-      <ion-col width-10>
-        <hr class="dotted2">
-      </ion-col>
-    </ion-row>
-  </ion-grid>    
-  
-  
-  
 </div>
 
-<button class="whiteButton" navPop style="margin-top: -1vh">Sing in</button>
+<div style="bottom: 5vh;position: absolute;width: 100%;">
+  <div class="separator" style="margin-top: 0vh">
+<ion-grid>
+  <ion-row>
+    <ion-col width-10>
+      <hr class="dotted2">
+    </ion-col>
+    <ion-col width-80>
+      <p class="txtWhite" style="margin:0">Already registered?</p>
+</ion-col>
+<ion-col width-10>
+  <hr class="dotted2">
+</ion-col>
+</ion-row>
+</ion-grid>
+</div>
+<button class="whiteButton" navPop>Sing in</button>
+</div>
 
 </ion-content>

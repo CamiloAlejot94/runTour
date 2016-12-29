@@ -23,8 +23,6 @@ export class RegisterPage {
   email: String
   /* password of user*/
   password: String
-  /* Username of user*/
-  username: string
   /* active or desactive load animation */
   load: boolean
 
@@ -38,7 +36,7 @@ export class RegisterPage {
   // 
   //-----------------------------------------------------------------
   RegisterEmail() {
-    if (this.email == null || this.password == null || this.username == null || this.name == null) {
+    if (this.email == null || this.password == null || this.name == null) {
       let alert = this.alertCtrl.create({
         title: 'Error',
         subTitle: 'No flields can be empty',
@@ -54,8 +52,7 @@ export class RegisterPage {
         console.log(user)
         firebase.database().ref('users/' + user.uid).set({
           name: this.name,
-          username: this.username,
-          email: this.email,          
+          email: this.email,
         });
       }).catch((error) => {
         this.load = false
@@ -68,11 +65,8 @@ export class RegisterPage {
         });
         alert.present()
       });
-
     }
   }
-
-
 }
 
 

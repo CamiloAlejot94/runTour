@@ -17,7 +17,7 @@ export class UserProfile {
   name: string = "adam sandler" //Nombre del usuario
   genre = "Genre" //genero del usuario 
   Weight: any //peso del usuario
-  height: any // Altura del usuaio
+  height: string // Altura del usuaio
   Bday: string = "birth day" //fecha de nacimiento del usuario 
   uWeigth = "Kg" //unidades de peso 
   uHeigth = "cm"; //unidades de altura
@@ -26,8 +26,8 @@ export class UserProfile {
   // Constructor
   //-----------------------------------------------------------------
   constructor(public navCtrl: NavController, public alertCtrl: AlertController, public provider: UserBack) {
-    this.pageHome=HomePage
-   }
+    this.pageHome = HomePage
+  }
 
   //-----------------------------------------------------------------
   // Metodos
@@ -127,23 +127,32 @@ export class UserProfile {
         buttons: ['OK']
       });
       alert.present();
-      console.log("genre:"+this.genre)
-      console.log("weigth:"+this.Weight)
-      console.log("heigth:"+this.height)
-      console.log("Bday:"+this.Bday)      
-      
+     
+
     }
     else {
-      firebase.database().ref('users/' + this.provider.UID + '/info/').set({
-        genero: this.genre,
-        peso: this.Weight,
-        uPeso: this.uWeigth,
-        altura: this.height,
-        uAltura: this.uHeigth,
-        FechaNac: this.Bday,
-      })
-     this.navCtrl.setRoot(HomePage)
-  }
+      debugger
+      if (this.height.toString().indexOf('.') !== -1) {
+        let alert = this.alertCtrl.create({
+          title: 'Eror',
+          subTitle: 'the height can not have dots',
+          buttons: ['OK']
+        });
+        alert.present();
+      }
+      else {
+        firebase.database().ref('users/' + this.provider.UID + '/info/').set({
+          genero: this.genre,
+          peso: this.Weight,
+          uPeso: this.uWeigth,
+          altura: this.height,
+          uAltura: this.uHeigth,
+          FechaNac: this.Bday,
+        })
+        this.navCtrl.setRoot(HomePage)
+
+      }
+    }
   }
 }
 

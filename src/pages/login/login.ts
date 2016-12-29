@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, NgZone } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 import { Facebook } from 'ionic-native';
@@ -29,7 +29,7 @@ export class LoginPage {
 	//-----------------------------------------------------------------
 	// Constructor
 	//-----------------------------------------------------------------
-	constructor(public navCtrl: NavController, public alertCtrl: AlertController) { 
+	constructor(public navCtrl: NavController, public alertCtrl: AlertController, private zone: NgZone) { 
 		this.load = false
 		this.pageRegistrar=RegisterPage
 	}
@@ -55,10 +55,12 @@ export class LoginPage {
 		}
 		else {
 			this.load = true
-			firebase.auth().createUserWithEmailAndPassword(this.email, this.password).then(() =>{
-				this.load = false
+			firebase.auth().signInWithEmailAndPassword(this.email, this.password).then(() =>{
+				this.zone.run(()=>{
+				this.load = false})
 			},error => {
-				this.load = false
+				this.zone.run(() => {
+				this.load = false})
 				let errorMessage = error.message;
 				let alert = this.alertCtrl.create({
 					title: 'Error',
@@ -80,9 +82,11 @@ export class LoginPage {
 			var creds = firebase.auth.FacebookAuthProvider.credential(_response.authResponse.accessToken)
 			firebase.auth().signInWithCredential(creds)
 		}).then((authData) => {
-			this.load = false
+           this.zone.run(() => {
+		   this.load = false})
 		}).catch((error) => {
-			this.load = false
+            this.zone.run(() => {
+			this.load = false})
 			let alert = this.alertCtrl.create({
 				title: 'Error',
 				subTitle: error,

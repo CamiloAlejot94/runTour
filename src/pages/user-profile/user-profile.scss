@@ -1,0 +1,125 @@
+page-user-profile {
+    // foto del usuario 
+.usr{                
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background: #fa6100;
+    background: -webkit-linear-gradient(left, #fa6100 0%, #972429 100%);
+    background: -o-linear-gradient(left, #fa6100 0%, #972429 100%);
+    background: linear-gradient(to right, #fa6100 0%, #972429 100%);
+    padding: 3px;
+    margin-top: 10vh;
+}
+
+.imgProf{
+    overflow: hidden;
+    border-radius:100%;
+    width: 100%;
+    height: 100%;   
+}
+
+ //texto fecha de nacimiento 
+.BdayProf{
+    color:rgba(255, 255, 255, 0.20);;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -3vh;
+}
+//nombre del usuario
+.nameProf{
+    color: white; 
+    font-size: 20px;
+    text-align: center;    
+}
+
+
+.formProf{
+    height: 50%;
+    bottom: 0px;
+    position: absolute;
+    width: 80%;
+    left: 10%;
+}
+.btnPop{
+    height: 45px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.30);;
+    text-align: center;
+    font-size: 15px;
+    padding-top: 15px;    
+}
+.btnRun{
+    height: 45px;
+    border-radius: 8px;
+    background-color: white
+    color;
+    text-align: center;
+    font-size: 15px;
+    padding-top: 15px;    
+}
+.btnMid{
+    height:  45px ;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.30);;
+    text-align: center;
+    font-size: 15;
+    margin-top: 2vh;
+    width: 100%;
+    border: none;
+    color: white;
+    padding-right: 45px;
+    
+
+}   
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: white;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: white;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: white;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: white;
+} 
+.datetime-text{
+    color: white;
+    margin-top: -14px;
+}
+.runBtn{
+    background-color: white;
+    font-weight: 300;
+    width: 100%;
+    height: 50px;
+    border-radius: 8px;
+    color: #ff7129;
+    font-size: 20px;
+    position: absolute;
+    bottom: 5vh;
+    text-align: center;
+    padding-top: 2.5vh;
+    }
+.borUnit{
+    position: absolute;
+    border-left: 2px solid white;
+    right: 5px;
+    top: 20px;
+    width: 30px;
+    height: 30px;
+    
+}
+.Unit{
+    position: absolute;
+    color: white;
+    right: 5px;
+    top: 27px;  
+}
+
+}

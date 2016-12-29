@@ -2,14 +2,10 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 import { Facebook } from 'ionic-native';
+import { RegisterPage } from '../register/register';
 declare var firebase: any;
 
-/*
-  Generated class for the Login page.
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
 	selector: 'page-login',
 	templateUrl: 'login.html'
@@ -19,7 +15,8 @@ export class LoginPage {
 	//-----------------------------------------------------------------
 	// Atributos
 	//-----------------------------------------------------------------
-
+	/* Referencia del HTML*/
+	pageRegistrar: any
 	/* email of user*/
 	email: String
 	/* password of user*/
@@ -34,6 +31,7 @@ export class LoginPage {
 	//-----------------------------------------------------------------
 	constructor(public navCtrl: NavController, public alertCtrl: AlertController) { 
 		this.load = false
+		this.pageRegistrar=RegisterPage
 	}
 
 

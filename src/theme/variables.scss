@@ -88,3 +88,7 @@ $colors: (
 
 $ionicons-font-path: "../assets/fonts";
 @import "ionicons";
+
+.content-ios hr{
+    background-color: rgba(0, 0, 0, 0) !important;
+}

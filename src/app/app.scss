@@ -1,16 +1,114 @@
-// http://ionicframework.com/docs/v2/theming/
+//-----------------------------------------------------------------
+// FONDO NARANJA 
+//-----------------------------------------------------------------
+.bg-orange{
+    background: url('../assets/img/fondo.jpg') no-repeat 50% 50%;
+    background-size: 100% 100%;
+    text-align: center;
+    color: white;
+}
+
+.bg-gray{
+  background-color : #25201D;
+}
 
 
-// App Global Sass
-// --------------------------------------------------
-// Put style rules here that you want to apply globally. These
-// styles are for the entire app and not just one component.
-// Additionally, this file can be also used as an entry point
-// to import other Sass files to be included in the output CSS.
-//
-// Shared Sass variables, which can be used to adjust Ionic's
-// default Sass variables, belong in "theme/variables.scss".
-//
-// To declare rules for a specific mode, create a child rule
-// for the .md, .ios, or .wp mode classes. The mode class is
-// automatically applied to the <body> element in the app.
+
+//-----------------------------------------------------------------
+// BOTÓN PARA INGRESAR
+//----------------------------------------------------------------- 
+  .whiteButton{
+    background-color: white;
+    font-weight: 300;
+    width: 80%;
+    height: 50px;
+    border-radius: 8px;
+    color: #ff7129;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin:10px 0;
+  }
+
+  .fbButton{
+    background-color: #4a61a4;
+    font-weight: 400;
+    width: 80%;
+    height: 50px;
+    border-radius: 8px;
+    color: white;
+    font-size: 20px;
+  margin:10px 0;
+  }
+  //-----------------------------------------------------------------
+// BOTON FONDO GRIS LETRA BLANCA
+//----------------------------------------------------------------- 
+  .grayButton{
+    background-color: white;
+    font-weight: 300;
+    width: 80%;
+    height: 50px;
+    border-radius: 8px;
+    color:white;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+
+
+//-----------------------------------------------------------------
+// FORMULARIOS
+//----------------------------------------------------------------- 
+  .formLogin{
+    width : 80%;
+    margin : auto;
+
+    input{
+      width: 100%;
+      height: 50px;
+      margin: 4% 0;
+      background: rgba(255, 255, 255, 0.2);
+      border: 0;
+      border-radius: 8px;
+      text-align: center;
+      font-size: 18px;
+      color: white;
+    }
+
+    input::-webkit-input-placeholder{
+      color:white;
+    }
+
+    .whiteButton{
+      width: 100%;
+  }}
+//-----------------------------------------------------------------
+// Textos 
+//-----------------------------------------------------------------
+
+  // TEXTOS BLANCOS
+  .txtWhite{
+    color: white;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  // SEPARADOR CON TEXTO
+  .separator{
+    width: 80%;
+    margin:auto;
+    display: flex;
+    align-items: center;
+
+    .dotted-max, .dotted{
+      border-bottom:2pt dotted white;
+      width: 16%;
+    }
+    .dotted-max{
+      width: 40%;
+    }
+  }
+
+    
+  

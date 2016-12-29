@@ -1,0 +1,57 @@
+<ion-header>
+</ion-header>
+
+<ion-content class="bg-gray">
+  <!--Titulo-->
+  <p style="color: white; text-align: center">PROFILE</p>
+  <!--Foto de perfil-->
+<div class="usr">
+  <div class="imgProf">
+    <img src="assets/img/adam.jpg">
+  </div>
+</div>
+<p class="nameProf">{{name}}</p>
+<span class="BdayProf">{{Bday}}</span>
+<hr style="border-bottom: 1px solid white;width: 10vh;height: 1vh; margin-top: 0vh;">
+
+<!--Daos del usuario-->
+<div class="formProf">
+  <!--seleccionar genero -->
+  <div class="btnPop" (click)="popGenre()">
+    <span style="color:white">{{genre}}</span>
+</div>
+<!--Inputs de peso y altura-->
+<ion-grid style="padding:0px">
+<ion-row>
+  <ion-col width-50 style="padding-left: 0px ">
+<div style="position: relative">
+<div (click)="unitHeigth()">
+  <span class="borUnit"> </span>
+  <span class="Unit">{{uHeigth}}</span>
+</div>
+<input type="number" placeholder="Height" [(ngModel)]="height" class="btnMid">
+</div>
+</ion-col>
+<ion-col width-50 style="padding-right: 0px " >
+<div style="position: relative">
+<div (click)="unitWeigth()">
+  <span class="borUnit"> </span>
+  <span class="Unit">{{uWeigth}}</span>
+</div>
+<input type="number" placeholder="Weight" [(ngModel)]="Weight" class="btnMid">
+</div>
+</ion-col>
+</ion-row>
+</ion-grid>
+
+<!--boton de ingreso de fecha-->
+<div class="btnPop" style="position: relative; margin-top: 2vh">
+<ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="Bday"></ion-datetime>
+</div>
+
+<!--Boton "RUN"-->
+<div class="runBtn" (click)="RUN()">RUN</div>
+</div>
+
+
+</ion-content>

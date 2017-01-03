@@ -1,27 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
 import { UserBack } from '../../providers/user-back';
 import { HomePage } from '../home/home';
-declare var firebase
+import { Camera  } from 'ionic-native';
+
+declare var firebase: any;
 
 
 @Component({
   selector: 'page-user-profile',
   templateUrl: 'user-profile.html'
 })
-export class UserProfile {
+export class UserProfile implements OnInit{
   //-----------------------------------------------------------------
   // Atributos
   //-----------------------------------------------------------------
+  name = ""
   pageHome: any
-  name: string = "adam sandler" //Nombre del usuario
   genre = "Genre" //genero del usuario 
   Weight: any //peso del usuario
   height: string // Altura del usuaio
-  Bday: string = "birth day" //fecha de nacimiento del usuario 
+  Bday: string = "Birth day" //fecha de nacimiento del usuario 
   uWeigth = "Kg" //unidades de peso 
   uHeigth = "cm"; //unidades de altura
-
+  private imageSrc: string; // variable de a foto 
   //-----------------------------------------------------------------
   // Constructor
   //-----------------------------------------------------------------
@@ -32,11 +34,36 @@ export class UserProfile {
   //-----------------------------------------------------------------
   // Metodos
   //-----------------------------------------------------------------
-  ionViewDidLoad() {
+  ngOnInit() {
+    let data : any
     let a = <HTMLElement>document.getElementsByClassName('datetime-text')[0]
     a.innerHTML = 'Birth day'
-    //metodo para selecionar el genero 
+    
+    
+    
+    firebase.database().ref('/users/' + this.provider.UID+'/').once('value').then(snapshot => {
+      data = snapshot.val()
+      console.log ('lo capturado fue: '+data.name)
+      this.name = data.name    
+    }); 
+    
   }
+  Photo(){
+    let cameraOptions = {
+    sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
+    destinationType: Camera.DestinationType.FILE_URI,      
+    quality: 100,
+    targetWidth: 1000,
+    targetHeight: 1000,
+    encodingType: Camera.EncodingType.JPEG,      
+    correctOrientation: true
+  }
+
+  Camera.getPicture(cameraOptions)
+    .then(file_uri => this.imageSrc = file_uri, 
+    err => console.log(err));
+  }
+  //metodo para selecionar el genero 
   popGenre() {
     let alert = this.alertCtrl.create();
     alert.setTitle('Selec your genre');
@@ -127,7 +154,7 @@ export class UserProfile {
         buttons: ['OK']
       });
       alert.present();
-     
+
 
     }
     else {

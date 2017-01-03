@@ -74,7 +74,7 @@ export class MyApp {
    */
   userState() {
     firebase.auth().onAuthStateChanged(user => {
-      debugger
+      
       if (user) {
         this.provider.UID = user.uid
         firebase.database().ref("user/" + user.uid + "/info").once("value", (snap) => {

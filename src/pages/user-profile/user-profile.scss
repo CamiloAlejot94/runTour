@@ -13,13 +13,15 @@ page-user-profile {
     background: linear-gradient(to right, #fa6100 0%, #972429 100%);
     padding: 3px;
     margin-top: 10vh;
+    border: 2px solid white;
 }
 
 .imgProf{
-    overflow: hidden;
-    border-radius:100%;
-    width: 100%;
-    height: 100%;   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5em;
+    color: white;  
 }
 
  //texto fecha de nacimiento 
@@ -36,6 +38,7 @@ page-user-profile {
     color: white; 
     font-size: 20px;
     text-align: center;    
+
 }
 
 
@@ -52,7 +55,8 @@ page-user-profile {
     background-color: rgba(255, 255, 255, 0.30);;
     text-align: center;
     font-size: 15px;
-    padding-top: 15px;    
+    padding-top: 15px;  
+    color: white;  
 }
 .btnRun{
     height: 45px;
@@ -120,6 +124,11 @@ page-user-profile {
     color: white;
     right: 5px;
     top: 27px;  
+}
+.info{
+    margin-top: 3vh;
+    position: absolute;
+    width: 100%;
 }
 
 }

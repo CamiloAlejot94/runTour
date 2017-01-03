@@ -1,13 +1,46 @@
-page-register {
-    //-----------------------------------------------------------------
-// Titulo RUN TOUR
-//----------------------------------------------------------------- 
- .logoTitle{
-    margin-top: 10%;
-    width: 60%;
-  }
+page-regiser {
+
   .dotted2{
-      border-bottom:2pt dotted white;
+      border-bottom:2px solid white !important;
       width: 100%;
-    }
 }
+.divFB{
+    bottom: 27vh;
+    position: absolute;
+    width: 100%;
+}
+.divSingIn{
+    bottom: 5vh;
+    position: absolute;
+    width: 100%;
+} 
+}
+@media
+    only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: 375px),
+    only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: 375px),
+    only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: 375px),
+    only screen and (        min-device-pixel-ratio: 2)      and (min-width: 375px),
+    only screen and (                min-resolution: 192dpi) and (min-width: 375px),
+    only screen and (                min-resolution: 2dppx)  and (min-width: 375px) { 
+
+    /* Small screen, retina, stuff to override above media query */
+    .formLogin{
+        margin-top: 20px !important;
+    }
+    .divSingIn{
+    bottom: 3vh !important;
+    position: absolute;
+    width: 100%
+    } 
+    .divFB{
+    bottom: 22vh !important;
+    position: absolute;
+    width: 100%;
+    }
+    .separator{
+        margin-bottom: 2vh !important;
+    }
+  }
+  
+
+

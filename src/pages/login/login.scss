@@ -1,12 +1,5 @@
 page-login {
-	.content-ios{
-		background: none;
-	}
-  background: url('../assets/img/fondo.jpg') no-repeat 50% 50%;
-  background-size: 100% 100%;
-  text-align: center;
-  color: white;
-
+	
  .logoTitle{
     margin: 10% auto;
     width: 60%;
@@ -16,22 +9,49 @@ page-login {
       margin-right: 10px;
       vertical-align: text-top;
     }
+    .form1{
+      top: 15vh;
+      position: absolute;
+    }
+    .form2{
+      bottom: 22vh;
+      position: absolute;
+      width: 100%;
+    }
+    .form3{
+     bottom: 2vh;
+    position: absolute;
+    width: 100%;
+    }
   }
 
-  @media
-    only screen and (-webkit-min-device-pixel-ratio: 2)      and (max-width: 320px),
-    only screen and (   min--moz-device-pixel-ratio: 2)      and (max-width: 320px),
-    only screen and (     -o-min-device-pixel-ratio: 2/1)    and (max-width: 320px),
-    only screen and (        min-device-pixel-ratio: 2)      and (max-width: 320px),
-    only screen and (                min-resolution: 192dpi) and (max-width: 320px),
-    only screen and (                min-resolution: 2dppx)  and (max-width: 320px) { 
+
+@media
+    only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: 375px),
+    only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: 375px),
+    only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: 375px),
+    only screen and (        min-device-pixel-ratio: 2)      and (min-width: 375px),
+    only screen and (                min-resolution: 192dpi) and (min-width: 375px),
+    only screen and (                min-resolution: 2dppx)  and (min-width: 375px) { 
 
     /* Small screen, retina, stuff to override above media query */
-
-    .formLogin input, .fbButton, .whiteButton{
-      height: 40px;
+    .form1{
+      top: 15vh !important;
+      width: 100%;
+    }
+    .form2{
+      bottom: 22vh;
+    position: absolute;
+    width: 100%;
+    }
+    .form3{
+      bottom: 2vh;
+    position: absolute;
+    width: 100%;
+    }
+    .formLogin{
+      margin-top: 3vh;
     }
 
-    }
-
+  }
 

@@ -1,16 +1,11 @@
-<ion-header>
-
-</ion-header>
-
-
 <ion-content class="bg-orange">
   <div class="load" *ngIf="load">
     <div class="cont-img">
-      <img src="assets/img/load.gif" alt="" />
+      <img src="assets/img/load.gif"/>
     </div>
   </div>
 
-  <img src="assets/img/logoRun.svg" alt="" class="logoTitle">
+  <img src="assets/img/logoRun.svg" style="margin-top: 10%; width: 60%;">
 
   <div class="formLogin">
 
@@ -21,36 +16,38 @@
     <button class="whiteButton" (click)="RegisterEmail()">Register</button>
 
   </div>
-<div style="bottom: 27vh;position: absolute;width: 100%;">
+
+
+<div class="divFB">
   <div class="separator" style="margin-top: -1vh">
-<hr class="dotted-max">
-<p class="txtWhite">or</p>
-<hr class="dotted-max">
+    <hr class="dotted-max">
+    <p class="txtWhite">or</p>
+    <hr class="dotted-max">
+  </div>  
+
+  <button class="fbButton" (click)="signInFacebook()" style="margin-top: -2vh">
+  <ion-icon ios="logo-facebook" md="logo-facebook"></ion-icon>
+    Sign in with facebook
+  </button>
 </div>
 
-<button class="fbButton" (click)="signInFacebook()" style="margin-top: -2vh">
-<ion-icon ios="logo-facebook" md="logo-facebook"></ion-icon>
-Sign in with facebook
-</button>
-</div>
-
-<div style="bottom: 5vh;position: absolute;width: 100%;">
+<div class="divSingIn" style="padding: 0">
   <div class="separator" style="margin-top: 0vh">
-<ion-grid>
-  <ion-row>
-    <ion-col width-10>
-      <hr class="dotted2">
-    </ion-col>
-    <ion-col width-80>
-      <p class="txtWhite" style="margin:0">Already registered?</p>
-</ion-col>
-<ion-col width-10>
-  <hr class="dotted2">
-</ion-col>
-</ion-row>
-</ion-grid>
-</div>
-<button class="whiteButton" navPop>Sing in</button>
+    <ion-grid>
+      <ion-row>
+        <ion-col width-10>
+          <hr class="dotted2">
+        </ion-col>
+        <ion-col width-80>
+          <p class="txtWhite" style="margin:0">Already registered?</p>
+        </ion-col>
+        <ion-col width-10>
+          <hr class="dotted2">
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+<button class="whiteButton" navPop style="margin-top: -1vh">Sing in</button>
 </div>
 
 </ion-content>

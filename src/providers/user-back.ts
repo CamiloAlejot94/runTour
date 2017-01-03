@@ -11,7 +11,7 @@ import { Subject }    from 'rxjs/Subject';
 @Injectable()
 export class UserBack {
   UID: any 
-  
+  name:string
   
 
   constructor(public http: Http) {

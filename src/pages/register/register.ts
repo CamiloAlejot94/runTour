@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
+import { UserBack } from '../../providers/user-back';
 
 declare var firebase: any;
 /*
@@ -26,16 +27,18 @@ export class RegisterPage {
   /* active or desactive load animation */
   load: boolean
 
-  constructor(public navCtrl: NavController, public alertCtrl: AlertController) { }
+  constructor(public navCtrl: NavController, public alertCtrl: AlertController,public provider: UserBack) { }
 
   ionViewDidLoad() {
     console.log('Hello RegisterPage Page');
+  
   }
 
   //-----------------------------------------------------------------
-  // 
+  // RegisterEmail
   //-----------------------------------------------------------------
   RegisterEmail() {
+    debugger
     if (this.email == null || this.password == null || this.name == null) {
       let alert = this.alertCtrl.create({
         title: 'Error',
@@ -46,13 +49,14 @@ export class RegisterPage {
     }
     else {
       this.load = true
-
+      
       firebase.auth().createUserWithEmailAndPassword(this.email, this.password).then((user) => {
         this.load = false
         console.log(user)
         firebase.database().ref('users/' + user.uid).set({
           name: this.name,
           email: this.email,
+          
         });
       }).catch((error) => {
         this.load = false
@@ -65,8 +69,9 @@ export class RegisterPage {
         });
         alert.present()
       });
-    }
-  }
-}
+      this.provider.name = this.name
+    } //cierra el else
+  } //cierra el metodo 
+} //cierra la clase
 
 

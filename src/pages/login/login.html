@@ -2,28 +2,28 @@
 <!--login animation-->
 <div class="load" *ngIf="load">
   <div class="cont-img">
-    <img src="assets/img/load.gif" alt="" />
+    <img src="assets/img/load.gif"/>
   </div>
 </div>
 
-
-<ion-content>
+  
+<ion-content class="bg-orange">
 <!--
   TITULO PRINCIPAL (LOGO)
 -->
-<img src="assets/img/logoRun.svg" alt="" class="logoTitle">
+<img src="assets/img/logoRun.svg" class="logoTitle">
 
-<div class="formLogin">
-  
+<div class="form1">
+<div class="formLogin">  
   <input type="text" placeholder="Email" [(ngModel)]="email">
   <input type="password" placeholder="Password" [(ngModel)]="password">
 
   <button class="whiteButton" (click)="signInEmail()">sign in</button>
-  
-  <p class="txtWhite">Forgot your password? </p>
-  
 </div>
-
+  
+  <p class="txtWhite">Forgot your password? </p>  
+</div>
+<div class="form2">
 <div class="separator">
   <hr class="dotted-max">
   <p class="txtWhite">or</p>
@@ -33,19 +33,20 @@
 <!--
   INGRESAR CON FACEBOOK
 -->
-<button class="fbButton" (click)="signInFacebook()">
+<button class="fbButton" (click)="signInFacebook()" style="margin-top: -2vh">
   <ion-icon ios="logo-facebook" md="logo-facebook"></ion-icon>
   Sign in with facebook
 </button>
-
+</div>
+<div class="form3">
 <div class="separator">
   <hr class="dotted">
   <p class="txtWhite">Not registered yet?</p>
   <hr class="dotted">
 </div>
 
-<button class="whiteButton" [navPush]="pageRegistrar">register</button>
-
+<button class="whiteButton" [navPush]="pageRegistrar" style="margin-top: -2vh">register</button>
+</div>
 
 </ion-content>
 
